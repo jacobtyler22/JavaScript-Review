@@ -9,8 +9,8 @@ var callFriend = function(){
 //Above you're given a callFriend function that returns another function. 
 //Do what you need to do in order to call your function and get 'Calling Jake at 435-215-9248' in your console.
 
-  //code here
-
+var newFunk = callFriend();
+console.log(newFunk('435-215-9248'));
 
 
 /*
@@ -20,3 +20,16 @@ Write a function that accepts a function as it's only argument and returns a new
 Once completed, add a second arguments that allows the function to be executed N number of times. After the function has been called N number of times, console.log('STAHHP');
 
 */
+
+var funkTown = function(cb, times){
+	this.times = times;
+	return function(){
+		if(times >= 1){
+			cb();
+		}
+		else{
+			console.log('STAHHP');
+		}
+		times--;
+	}
+}
